@@ -27,7 +27,7 @@ def convert_to_json(csv):
     json_data = json.dumps(data_dict)
     with open("data.json", "w") as f:
         f.write(json_data)
-    print("Conversion to JSON done.")
+    print("\nConversion to JSON done.")
 
 
 def main():
