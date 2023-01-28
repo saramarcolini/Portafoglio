@@ -1,6 +1,8 @@
 import requests
+import csv
 import pandas
 import json
+
 
 def getFile(url):
     header = {'Connection': 'keep-alive',
@@ -12,6 +14,13 @@ def getFile(url):
     website = requests.get(url, headers=header)
     return website.text
 
+
+def parseCsv(content):
+    csvReader = csv.DictReader(content.splitlines())
+    data = [row for row in csvReader]
+    return data
+
+
 def convert_to_json(csv):
     df = pandas.read_csv(csv)
     data_dict = df.to_dict()
@@ -20,11 +29,15 @@ def convert_to_json(csv):
         f.write(json_data)
     print("Conversion to JSON done.")
 
+
 def main():
-    csv = getFile("https://query1.finance.yahoo.com/v7/finance/download/PIRC.MI?period1=1642923403&period2=1674459403&interval=1d&events=history&includeAdjustedClose=true")
+    csvContent = getFile("https://query1.finance.yahoo.com/v7/finance/download/PIRC.MI?period1=1642923403&period2=1674459403&interval=1d&events=history&includeAdjustedClose=true")
+    data = parseCsv(csvContent)
+    print(data)
     with open("file.csv", "w") as f:
-        f.write(csv)
+        f.write(csvContent)
     convert_to_json("file.csv")
+
 
 if __name__ == "__main__":
     main()
