@@ -1,6 +1,6 @@
 # Portafoglio
 
-![Language](https://img.shields.io/badge/Language-Python-blue?style=flat) 
+![Language](https://img.shields.io/badge/Language-Python-lightgreen?style=flat) 
 ![Platform](https://img.shields.io/badge/OS%20platform%20supported-Linux-blue?style=flat)
 ![Platform](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat)
 
@@ -21,10 +21,6 @@ From this csv, use some functions to convert the csv to json and yaml starting f
 - `csv` library
   ```commandline
   pip install csv
-  ```
-- `pandas` library
-  ```commandline
-  pip install pandas
   ```
 - `json` library
   ```commandline
