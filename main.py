@@ -1,7 +1,7 @@
 import requests
 import csv
 import json
-
+import yaml
 
 def getFile(url):
     header = {'Connection': 'keep-alive',
@@ -28,14 +28,23 @@ def convert_to_json(data):
     with open("PIRC.MI.json", "w") as f:
         f.write(json_data)
     print("\nConversion to JSON done")
+    
 
+def convert_to_yaml(data):
+    yaml_data = []
+    for i, row in enumerate(data):
+        yaml_data.append({"chiave": i+1, "valore": row})
+    yaml_data = yaml.dump(yaml_data, default_flow_style=False)
+    with open("PIRC.MI.yaml", "w") as f:
+        f.write(yaml_data)
+    print("\nConversion to YAML done")
 
 
 def main():
     csvContent = getFile("https://query1.finance.yahoo.com/v7/finance/download/PIRC.MI?period1=1642923403&period2=1674459403&interval=1d&events=history&includeAdjustedClose=true")
     data = parseCsv(csvContent)
     convert_to_json(data)
-
+    convert_to_yaml(data)
 
 
 if __name__ == "__main__":
