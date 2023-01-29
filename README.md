@@ -26,6 +26,10 @@ From this csv, use some functions to convert the csv to json and yaml starting f
   ```commandline
   pip install json
   ```
+- `yaml` library
+  ```commandline
+  pip install pyyaml
+  ```
 
 ## Execution
 
