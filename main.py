@@ -1,6 +1,5 @@
 import requests
 import csv
-import pandas
 import json
 
 
@@ -21,22 +20,22 @@ def parseCsv(content):
     return data
 
 
-def convert_to_json(csv):
-    df = pandas.read_csv(csv)
-    data_dict = df.to_dict()
-    json_data = json.dumps(data_dict)
-    with open("data.json", "w") as f:
+def convert_to_json(data):
+    json_data = []
+    for i, row in enumerate(data):
+        json_data.append({"chiave": i+1, "valore": row})
+    json_data = json.dumps(json_data, indent=4)
+    with open("PIRC.MI.json", "w") as f:
         f.write(json_data)
-    print("\nConversion to JSON done.")
+    print("\nConversion to JSON done")
+
 
 
 def main():
     csvContent = getFile("https://query1.finance.yahoo.com/v7/finance/download/PIRC.MI?period1=1642923403&period2=1674459403&interval=1d&events=history&includeAdjustedClose=true")
     data = parseCsv(csvContent)
-    print(data)
-    with open("file.csv", "w") as f:
-        f.write(csvContent)
-    convert_to_json("file.csv")
+    convert_to_json(data)
+
 
 
 if __name__ == "__main__":
