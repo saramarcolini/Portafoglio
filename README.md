@@ -58,12 +58,12 @@ Open a terminal with path "./portafoglio/" and type the following command:
 
 ##### 29/01/2023
 
-- Convert from csv to yaml
-- Test the program
-- Documentation
+- [x] Convert from csv to yaml
+- [x] Test the program
+- [x] Documentation
 
 ##### 28/01/2023
 
-- Made a function to get csv file from Yahoo Finance
-- Create dictionary containing the csv data
-- Convert from csv to json
+- [x] Made a function to get csv file from Yahoo Finance
+- [x] Create dictionary containing the csv data
+- [x] Convert from csv to json
