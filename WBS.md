@@ -6,7 +6,7 @@
 
 
 | Level       | WBS       | Task Descritpion                                | Assigned To                           | Start        | End          | Notes       				        |  DUR     |  Name   | Predecessors                    |
-|   ---       |     ---   |       ---                                       |      ---                              | ---          | ---          |    ---      				        |          |         |                                 |
+|   ---       |     ---   |       ---                                       |      ---                              | ---          | ---          |    ---      				        |   ---    |  ---    |  ---                            |
 |   **1**     |   **1**   |   **ANALYSIS**                                  |                                       |              |              |           				          |          |  A      |                                 |
 |   1         |   1       |   Analyze project requirements                  |   Ambrosi, Klein, Marcolini, Villardi |   23/01/2023 |   24/01/2023 |             				        |  1       |  B      |  -                              |
 |   2         |   1.1     |   Create WBS and RACI matrix files              |   Marcolini                           |   24/01/2023 |   24/01/2023 |             				        |  1       |  C      |  -                              |
